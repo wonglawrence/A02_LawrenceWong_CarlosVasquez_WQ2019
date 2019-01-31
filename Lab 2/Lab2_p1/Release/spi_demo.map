@@ -1,0 +1,131 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.3                     
+******************************************************************************
+>> Linked Thu Jan 17 14:20:59 2019
+
+OUTPUT FILE NAME:   <spi_demo.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 20004401
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SRAM_CODE             20004000   00013000  0000043a  00012bc6  RW X
+  SRAM_DATA             20017000   00019000  00001000  00018000  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+20004000    20004000    0000043a   0000043a    r-x
+  20004000    20004000    00000400   00000400    r-- .intvecs
+  20004400    20004400    0000003a   0000003a    r-x .text
+20017000    20017000    00000800   00000000    rw-
+  20017000    20017000    00000800   00000000    rw- .sysmem
+2002f800    2002f800    00000800   00000000    rw-
+  2002f800    2002f800    00000800   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    20004000    00000400     
+                  20004000    00000400     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    20004000    00000000     UNINITIALIZED
+
+.text      0    20004400    0000003a     
+                  20004400    00000024     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noinit_noargs:_c_int00_noinit_noargs)
+                  20004424    0000000e     startup_ccs.obj (.text)
+                  20004432    00000004     rtsv7M4_T_le_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  20004436    00000004                           : exit.c.obj (.text:abort:abort)
+
+.cinit     0    20004000    00000000     UNINITIALIZED
+
+.sysmem    0    20017000    00000800     UNINITIALIZED
+                  20017000    00000008     rtsv7M4_T_le_eabi.lib : memory.c.obj (.sysmem)
+                  20017008    000007f8     --HOLE--
+
+.stack     0    2002f800    00000800     UNINITIALIZED
+                  2002f800    00000004     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2002f804    000007fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                code   ro data   rw data
+       ------                ----   -------   -------
+    .\
+       startup_ccs.obj       14     1024      0      
+    +--+---------------------+------+---------+---------+
+       Total:                14     1024      0      
+                                                     
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.3.LTS\lib\rtsv7M4_T_le_eabi.lib
+       boot_cortex_m.c.obj   36     0         0      
+       exit.c.obj            4      0         0      
+       pre_init.c.obj        4      0         0      
+    +--+---------------------+------+---------+---------+
+       Total:                44     0         0      
+                                                     
+       Heap:                 0      0         2048   
+       Stack:                0      0         2048   
+    +--+---------------------+------+---------+---------+
+       Grand Total:          58     1024      4096   
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                  
+-------   ----                  
+20004437  C$$EXIT               
+20004425  ResetISR              
+20030000  __STACK_END           
+00000800  __STACK_SIZE          
+00000800  __SYSMEM_SIZE         
+ffffffff  __TI_pprof_out_hndl   
+ffffffff  __TI_prof_data_size   
+ffffffff  __TI_prof_data_start  
+20004000  __TI_static_base__    
+ffffffff  __binit__             
+ffffffff  __c_args__            
+UNDEFED   __mpu_init            
+2002f800  __stack               
+20004401  _c_int00_noinit_noargs
+20017000  _sys_memory           
+20004433  _system_pre_init      
+20004437  abort                 
+ffffffff  binit                 
+20004000  g_pfnVectors          
+UNDEFED   main                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                  
+-------   ----                  
+00000800  __STACK_SIZE          
+00000800  __SYSMEM_SIZE         
+20004000  __TI_static_base__    
+20004000  g_pfnVectors          
+20004401  _c_int00_noinit_noargs
+20004425  ResetISR              
+20004433  _system_pre_init      
+20004437  C$$EXIT               
+20004437  abort                 
+20017000  _sys_memory           
+2002f800  __stack               
+20030000  __STACK_END           
+ffffffff  __TI_pprof_out_hndl   
+ffffffff  __TI_prof_data_size   
+ffffffff  __TI_prof_data_start  
+ffffffff  __binit__             
+ffffffff  __c_args__            
+ffffffff  binit                 
+UNDEFED   __mpu_init            
+UNDEFED   main                  
+
+[20 symbols]

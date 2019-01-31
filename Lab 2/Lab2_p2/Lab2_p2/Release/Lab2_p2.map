@@ -1,0 +1,434 @@
+******************************************************************************
+                  TI ARM Linker PC v18.1.4                     
+******************************************************************************
+>> Linked Thu Jan 24 13:29:35 2019
+
+OUTPUT FILE NAME:   <Lab2_p2.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 200065cd
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  SRAM_CODE             20004000   00013000  0000306c  0000ff94  RW X
+  SRAM_DATA             20017000   00019000  00001015  00017feb  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+20004000    20004000    0000306c   0000306c    r-x
+  20004000    20004000    00000400   00000400    r-- .intvecs
+  20004400    20004400    00002524   00002524    r-x .text
+  20006924    20006924    00000724   00000724    r-- .const
+  20007048    20007048    00000024   00000024    r-- .cinit
+20017000    20017000    00000815   00000000    rw-
+  20017000    20017000    00000800   00000000    rw- .sysmem
+  20017800    20017800    00000015   00000000    rw- .data
+2002f800    2002f800    00000800   00000000    rw-
+  2002f800    2002f800    00000800   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    20004000    00000400     
+                  20004000    00000400     startup_ccs.obj (.intvecs)
+
+.init_array 
+*          0    20004000    00000000     UNINITIALIZED
+
+.text      0    20004400    00002524     
+                  20004400    00000a80     Adafruit_GFX.obj (.text)
+                  20004e80    00000878     main.obj (.text)
+                  200056f8    000004a6     Adafruit_OLED.obj (.text)
+                  20005b9e    00000002     --HOLE-- [fill = 0]
+                  20005ba0    00000284     i2c_if.obj (.text)
+                  20005e24    00000178     driverlib.a : prcm.obj (.text:PRCMCC3200MCUInit)
+                  20005f9c    0000012c     pinmux.obj (.text)
+                  200060c8    000000a8     driverlib.a : interrupt.obj (.text:IntEnable)
+                  20006170    000000a0                 : spi.obj (.text:SPIConfigSetExpClk)
+                  20006210    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  200062ac    00000094     driverlib.a : prcm.obj (.text:PRCMPeripheralClockGet)
+                  20006340    00000088                 : pin.obj (.text:PinConfigSet)
+                  200063c8    00000084                 : i2c.obj (.text:I2CMasterInitExpClk)
+                  2000644c    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  200064b4    00000058     driverlib.a : prcm.obj (.text:PRCMPeripheralReset)
+                  2000650c    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  20006550    00000040     driverlib.a : pin.obj (.text:PinModeSet)
+                  20006590    0000003c                 : prcm.obj (.text:PRCMPeripheralClkEnable)
+                  200065cc    00000038     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  20006604    00000036     driverlib.a : gpio.obj (.text:GPIODirModeSet)
+                  2000663a    00000030                 : pin.obj (.text:PinTypeGPIO)
+                  2000666a    0000002c                 : i2c.obj (.text:I2CMasterErr)
+                  20006696    00000002     --HOLE-- [fill = 0]
+                  20006698    0000002c                 : prcm.obj (.text:PRCMSysResetCauseGet)
+                  200066c4    00000028                 : prcm.obj (.text:PRCMPeripheralClkDisable)
+                  200066ec    00000022                 : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  2000670e    00000022                 : spi.obj (.text:SPIReset)
+                  20006730    00000020                 : gpio.obj (.text:GPIOPinWrite)
+                  20006750    00000020                 : spi.obj (.text:SPIDataGet)
+                  20006770    0000001e                 : i2c.obj (.text:I2CMasterIntStatusEx)
+                  2000678e    0000001e                 : spi.obj (.text:SPIDataPut)
+                  200067ac    0000001c                 : pin.obj (.text:PinTypeI2C)
+                  200067c8    0000001a                 : pin.obj (.text:PinTypeSPI)
+                  200067e2    00000018                 : spi.obj (.text:SPICSDisable)
+                  200067fa    00000018                 : spi.obj (.text:SPICSEnable)
+                  20006812    00000018                 : spi.obj (.text:SPIEnable)
+                  2000682a    00000016                 : i2c.obj (.text:I2CMasterDataPut)
+                  20006840    00000016                 : i2c.obj (.text:I2CMasterEnable)
+                  20006856    00000016                 : prcm.obj (.text:PRCMHIBRegRead)
+                  2000686c    00000016                 : prcm.obj (.text:PRCMHIBRegWrite)
+                  20006882    00000014                 : cpu.obj (.text:CPUcpsie)
+                  20006896    00000002     --HOLE-- [fill = 0]
+                  20006898    00000014                 : interrupt.obj (.text:IntVTableBaseSet)
+                  200068ac    00000012                 : i2c.obj (.text:I2CMasterControl)
+                  200068be    00000012                 : i2c.obj (.text:I2CMasterIntClearEx)
+                  200068d0    00000012                 : i2c.obj (.text:I2CMasterTimeoutSet)
+                  200068e2    0000000e                 : i2c.obj (.text:I2CMasterDataGet)
+                  200068f0    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  200068fe    0000000e     startup_ccs.obj (.text)
+                  2000690c    0000000a     driverlib.a : interrupt.obj (.text:IntMasterEnable)
+                  20006916    00000006                 : utils.obj (.text:UtilsDelay)
+                  2000691c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  20006920    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    20006924    00000724     
+                  20006924    000004fb     Adafruit_GFX.obj (.const:.string:font)
+                  20006e1f    00000001     --HOLE-- [fill = 0]
+                  20006e20    00000100     driverlib.a : pin.obj (.const:g_ulPinToPadMap)
+                  20006f20    000000a8                 : prcm.obj (.const:PRCM_PeriphRegsList)
+                  20006fc8    00000080                 : interrupt.obj (.const)
+
+.cinit     0    20007048    00000024     
+                  20007048    00000013     (.cinit..data.load) [load image, compression = lzss]
+                  2000705b    00000001     --HOLE-- [fill = 0]
+                  2000705c    00000008     (__TI_handler_table)
+                  20007064    00000008     (__TI_cinit_table)
+
+.data      0    20017800    00000015     UNINITIALIZED
+                  20017800    00000015     Adafruit_GFX.obj (.data)
+
+.sysmem    0    20017000    00000800     UNINITIALIZED
+                  20017000    00000008     rtsv7M4_T_le_v4SPD16_eabi.lib : memory.c.obj (.sysmem)
+                  20017008    000007f8     --HOLE--
+
+.stack     0    2002f800    00000800     UNINITIALIZED
+                  2002f800    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2002f804    000007fc     --HOLE--
+
+MODULE SUMMARY
+
+       Module                       code   ro data   rw data
+       ------                       ----   -------   -------
+    .\
+       Adafruit_GFX.obj             2688   1275      21     
+       main.obj                     2168   0         0      
+       Adafruit_OLED.obj            1190   0         0      
+       startup_ccs.obj              14     1024      0      
+       i2c_if.obj                   644    0         0      
+       pinmux.obj                   300    0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       7004   2299      21     
+                                                            
+    C:/ti/CC3200SDK_1.3.0/cc3200-sdk/driverlib/ccs/Release/driverlib.a
+       prcm.obj                     800    168       0      
+       pin.obj                      302    256       0      
+       i2c.obj                      352    0         0      
+       spi.obj                      328    0         0      
+       interrupt.obj                198    128       0      
+       gpio.obj                     86     0         0      
+       cpu.obj                      20     0         0      
+       utils.obj                    6      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       2092   552       0      
+                                                            
+    C:\ti\ccsv8\tools\compiler\ti-cgt-arm_18.1.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       memcpy_t2.asm.obj            156    0         0      
+       copy_decompress_lzss.c.obj   104    0         0      
+       autoinit.c.obj               68     0         0      
+       boot_cortex_m.c.obj          56     0         0      
+       copy_decompress_none.c.obj   14     0         0      
+       exit.c.obj                   4      0         0      
+       pre_init.c.obj               4      0         0      
+    +--+----------------------------+------+---------+---------+
+       Total:                       406    0         0      
+                                                            
+       Heap:                        0      0         2048   
+       Stack:                       0      0         2048   
+       Linker Generated:            0      35        0      
+    +--+----------------------------+------+---------+---------+
+       Grand Total:                 9502   2886      4117   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 20007064 records: 1, size/record: 8, table size: 8
+	.data: load addr=20007048, load size=00000013 bytes, run addr=20017800, run size=00000015 bytes, compression=lzss
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 2000705c records: 2, size/record: 4, table size: 8
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+20005781  Adafruit_Init                 
+20006921  C$$EXIT                       
+20006883  CPUcpsie                      
+200058f7  Color565                      
+20006605  GPIODirModeSet                
+20006731  GPIOPinWrite                  
+200068ad  I2CMasterControl              
+200068e3  I2CMasterDataGet              
+2000682b  I2CMasterDataPut              
+20006841  I2CMasterEnable               
+2000666b  I2CMasterErr                  
+200063c9  I2CMasterInitExpClk           
+200068bf  I2CMasterIntClearEx           
+20006771  I2CMasterIntStatusEx          
+200066ed  I2CMasterSlaveAddrSet         
+200068d1  I2CMasterTimeoutSet           
+20005e0f  I2C_IF_Close                  
+20005dc7  I2C_IF_Open                   
+20005cc5  I2C_IF_Read                   
+20005d81  I2C_IF_ReadFrom               
+20005c15  I2C_IF_Write                  
+200060c9  IntEnable                     
+2000690d  IntMasterEnable               
+20006899  IntVTableBaseSet              
+20004dab  Outstr                        
+20005e25  PRCMCC3200MCUInit             
+20006857  PRCMHIBRegRead                
+2000686d  PRCMHIBRegWrite               
+200066c5  PRCMPeripheralClkDisable      
+20006591  PRCMPeripheralClkEnable       
+200062ad  PRCMPeripheralClockGet        
+200064b5  PRCMPeripheralReset           
+20006699  PRCMSysResetCauseGet          
+20006341  PinConfigSet                  
+20006551  PinModeSet                    
+20005f9d  PinMuxConfig                  
+2000663b  PinTypeGPIO                   
+200067ad  PinTypeI2C                    
+200067c9  PinTypeSPI                    
+200068ff  ResetISR                      
+200067e3  SPICSDisable                  
+200067fb  SPICSEnable                   
+20006171  SPIConfigSetExpClk            
+20006751  SPIDataGet                    
+2000678f  SPIDataPut                    
+20006813  SPIEnable                     
+2000670f  SPIReset                      
+20006917  UtilsDelay                    
+20030000  __STACK_END                   
+00000800  __STACK_SIZE                  
+00000800  __SYSMEM_SIZE                 
+20007064  __TI_CINIT_Base               
+2000706c  __TI_CINIT_Limit              
+2000705c  __TI_Handler_Table_Base       
+20007064  __TI_Handler_Table_Limit      
+2000650d  __TI_auto_init_nobinit_nopinit
+2000644d  __TI_decompress_lzss          
+200068f1  __TI_decompress_none          
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+20007048  __TI_static_base__            
+20006211  __aeabi_memcpy                
+20006211  __aeabi_memcpy4               
+20006211  __aeabi_memcpy8               
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+UNDEFED   __mpu_init                    
+2002f800  __stack                       
+200065cd  _c_int00_noargs               
+20017000  _sys_memory                   
+UNDEFED   _system_post_cinit            
+2000691d  _system_pre_init              
+20006921  abort                         
+ffffffff  binit                         
+20017800  cursor_x                      
+20017804  cursor_y                      
+20004e99  delay                         
+20004c5f  drawChar                      
+20004401  drawCircle                    
+20004535  drawCircleHelper              
+20005aa9  drawFastHLine                 
+20005a0d  drawFastVLine                 
+2000477b  drawLine                      
+20005b45  drawPixel                     
+20004867  drawRect                      
+200048b5  drawRoundRect                 
+20004a1d  drawTriangle                  
+20004653  fillCircle                    
+2000468d  fillCircleHelper              
+2000594f  fillRect                      
+200049a3  fillRoundRect                 
+20005939  fillScreen                    
+20004a5f  fillTriangle                  
+20004000  g_pfnVectors                  
+200058b3  goTo                          
+20004e5f  height                        
+20005b83  invert                        
+2000540f  lcdTestPattern                
+200054df  lcdTestPattern2               
+200055af  main                          
+20006211  memcpy                        
+20004df7  setCursor                     
+20004e2f  setTextColor                  
+20004e0f  setTextSize                   
+20004e47  setTextWrap                   
+200050cf  testdrawcircles               
+20004f3f  testdrawrects                 
+20004ecd  testfastlines                 
+2000505d  testfillcircles               
+20004f9f  testfillrects                 
+20005241  testlines                     
+200051cf  testroundrects                
+2000514d  testtriangles                 
+20017810  textbgcolor                   
+2001780c  textcolor                     
+20017808  textsize                      
+20004e5b  width                         
+20017814  wrap                          
+200056f9  writeCommand                  
+2000573d  writeData                     
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000800  __STACK_SIZE                  
+00000800  __SYSMEM_SIZE                 
+20004000  g_pfnVectors                  
+20004401  drawCircle                    
+20004535  drawCircleHelper              
+20004653  fillCircle                    
+2000468d  fillCircleHelper              
+2000477b  drawLine                      
+20004867  drawRect                      
+200048b5  drawRoundRect                 
+200049a3  fillRoundRect                 
+20004a1d  drawTriangle                  
+20004a5f  fillTriangle                  
+20004c5f  drawChar                      
+20004dab  Outstr                        
+20004df7  setCursor                     
+20004e0f  setTextSize                   
+20004e2f  setTextColor                  
+20004e47  setTextWrap                   
+20004e5b  width                         
+20004e5f  height                        
+20004e99  delay                         
+20004ecd  testfastlines                 
+20004f3f  testdrawrects                 
+20004f9f  testfillrects                 
+2000505d  testfillcircles               
+200050cf  testdrawcircles               
+2000514d  testtriangles                 
+200051cf  testroundrects                
+20005241  testlines                     
+2000540f  lcdTestPattern                
+200054df  lcdTestPattern2               
+200055af  main                          
+200056f9  writeCommand                  
+2000573d  writeData                     
+20005781  Adafruit_Init                 
+200058b3  goTo                          
+200058f7  Color565                      
+20005939  fillScreen                    
+2000594f  fillRect                      
+20005a0d  drawFastVLine                 
+20005aa9  drawFastHLine                 
+20005b45  drawPixel                     
+20005b83  invert                        
+20005c15  I2C_IF_Write                  
+20005cc5  I2C_IF_Read                   
+20005d81  I2C_IF_ReadFrom               
+20005dc7  I2C_IF_Open                   
+20005e0f  I2C_IF_Close                  
+20005e25  PRCMCC3200MCUInit             
+20005f9d  PinMuxConfig                  
+200060c9  IntEnable                     
+20006171  SPIConfigSetExpClk            
+20006211  __aeabi_memcpy                
+20006211  __aeabi_memcpy4               
+20006211  __aeabi_memcpy8               
+20006211  memcpy                        
+200062ad  PRCMPeripheralClockGet        
+20006341  PinConfigSet                  
+200063c9  I2CMasterInitExpClk           
+2000644d  __TI_decompress_lzss          
+200064b5  PRCMPeripheralReset           
+2000650d  __TI_auto_init_nobinit_nopinit
+20006551  PinModeSet                    
+20006591  PRCMPeripheralClkEnable       
+200065cd  _c_int00_noargs               
+20006605  GPIODirModeSet                
+2000663b  PinTypeGPIO                   
+2000666b  I2CMasterErr                  
+20006699  PRCMSysResetCauseGet          
+200066c5  PRCMPeripheralClkDisable      
+200066ed  I2CMasterSlaveAddrSet         
+2000670f  SPIReset                      
+20006731  GPIOPinWrite                  
+20006751  SPIDataGet                    
+20006771  I2CMasterIntStatusEx          
+2000678f  SPIDataPut                    
+200067ad  PinTypeI2C                    
+200067c9  PinTypeSPI                    
+200067e3  SPICSDisable                  
+200067fb  SPICSEnable                   
+20006813  SPIEnable                     
+2000682b  I2CMasterDataPut              
+20006841  I2CMasterEnable               
+20006857  PRCMHIBRegRead                
+2000686d  PRCMHIBRegWrite               
+20006883  CPUcpsie                      
+20006899  IntVTableBaseSet              
+200068ad  I2CMasterControl              
+200068bf  I2CMasterIntClearEx           
+200068d1  I2CMasterTimeoutSet           
+200068e3  I2CMasterDataGet              
+200068f1  __TI_decompress_none          
+200068ff  ResetISR                      
+2000690d  IntMasterEnable               
+20006917  UtilsDelay                    
+2000691d  _system_pre_init              
+20006921  C$$EXIT                       
+20006921  abort                         
+20007048  __TI_static_base__            
+2000705c  __TI_Handler_Table_Base       
+20007064  __TI_CINIT_Base               
+20007064  __TI_Handler_Table_Limit      
+2000706c  __TI_CINIT_Limit              
+20017000  _sys_memory                   
+20017800  cursor_x                      
+20017804  cursor_y                      
+20017808  textsize                      
+2001780c  textcolor                     
+20017810  textbgcolor                   
+20017814  wrap                          
+2002f800  __stack                       
+20030000  __STACK_END                   
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  __c_args__                    
+ffffffff  binit                         
+UNDEFED   __mpu_init                    
+UNDEFED   _system_post_cinit            
+
+[121 symbols]
